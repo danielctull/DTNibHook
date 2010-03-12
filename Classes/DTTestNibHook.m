@@ -13,4 +13,5 @@
 @synthesize label;
 @synthesize indicator;
 @synthesize imageView;
+@synthesize button;
 @end
