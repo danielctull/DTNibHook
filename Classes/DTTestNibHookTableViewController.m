@@ -46,6 +46,8 @@ NSString *const DTTestNibHookTableViewControllerCellReuseIdentifier = @"Cell";
 	else 
 		[nibHook.indicator stopAnimating];
     
+	[nibHook release];
+	
     return [cell autorelease];
 }
 
