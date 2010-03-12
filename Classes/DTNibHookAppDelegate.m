@@ -17,13 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 	DTTestNibHook *hook = [[DTTestNibHook alloc] initWithNibName:@"DTTestNibHook" bundle:nil];
-	
-	UIView *view = hook.view;
-	
 	[hook logProperties];
+	UIView *view = [hook.view retain];
+	[hook release];
 	
 	DTTestNibHook *hook2 = [[DTTestNibHook alloc] initWithView:view];
 	[hook2 logProperties];
+	[hook2 release];
 	
 	DTTestNibHookTableViewController *vc = [[DTTestNibHookTableViewController alloc] init];
 	[window addSubview:vc.view];
