@@ -51,6 +51,11 @@ NSInteger const DTNibHookFailNumber = -1911;
 	return self;
 }
 
+- (void)dealloc {
+	[view release];
+	[super dealloc];
+}
+
 - (void)generatePropertyList {
 
 	NSUInteger outCount;
