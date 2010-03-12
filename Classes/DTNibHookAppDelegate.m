@@ -8,6 +8,7 @@
 
 #import "DTNibHookAppDelegate.h"
 #import "DTTestNibHook.h"
+#import "DTTestNibHookTableViewController.h"
 
 @implementation DTNibHookAppDelegate
 
@@ -23,6 +24,9 @@
 	
 	DTTestNibHook *hook2 = [[DTTestNibHook alloc] initWithView:view];
 	[hook2 logProperties];
+	
+	DTTestNibHookTableViewController *vc = [[DTTestNibHookTableViewController alloc] init];
+	[window addSubview:vc.view];
 	
     [window makeKeyAndVisible];
 	
