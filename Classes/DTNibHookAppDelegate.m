@@ -8,7 +8,7 @@
 
 #import "DTNibHookAppDelegate.h"
 #import "DTTestNibHook.h"
-#import "DTTestNibHookTableViewController.h"
+#import "DTTestTableViewController.h"
 
 @implementation DTNibHookAppDelegate
 
@@ -16,6 +16,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+	
+	// This test shows two different instances of the Test Nib Hook. 
+	// The first instance creates its view from the nib and assigns all the tags for its properties.
+	// The second takes the created view and links its properties to the subviews using the tags.
+	
 	DTTestNibHook *hook = [[DTTestNibHook alloc] initWithNibName:@"DTTestNibHook" bundle:nil];
 	[hook logProperties];
 	UIView *view = [hook.view retain];
@@ -25,9 +30,15 @@
 	[hook2 logProperties];
 	[hook2 release];
 	
-	DTTestNibHookTableViewController *vc = [[DTTestNibHookTableViewController alloc] init];
-	[window addSubview:vc.view];
 	
+	
+	
+	DTTestTableViewController *vc = [[DTTestTableViewController alloc] init];
+	vc.title = @"DTNibHook";
+	navController = [[UINavigationController alloc] initWithRootViewController:vc];
+	[vc release];
+	
+	[window addSubview:navController.view];
     [window makeKeyAndVisible];
 	
 	return YES;

@@ -1,5 +1,5 @@
 //
-//  DTTestNibHookTableViewController.h
+//  DTTestTableViewController.h
 //  DTNibHook
 //
 //  Created by Daniel Tull on 12.03.2010.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface DTTestNibHookTableViewController : UITableViewController {
+@interface DTTestTableViewController : UITableViewController {
 
 }
 

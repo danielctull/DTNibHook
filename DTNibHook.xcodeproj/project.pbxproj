@@ -11,7 +11,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		24310347114A453300DC34DA /* DTTestNibHookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24310346114A453300DC34DA /* DTTestNibHookTableViewController.m */; };
+		24310347114A453300DC34DA /* DTTestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24310346114A453300DC34DA /* DTTestTableViewController.m */; };
 		2431034C114A462500DC34DA /* DTTestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2431034B114A462500DC34DA /* DTTestTableViewCell.xib */; };
 		24310352114A464D00DC34DA /* DTTestTableViewCellNibHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 24310351114A464D00DC34DA /* DTTestTableViewCellNibHook.m */; };
 		249022241149C04F006EF03F /* DTNibHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 249022231149C04F006EF03F /* DTNibHook.m */; };
@@ -27,8 +27,8 @@
 		1D3623250D0F684500981E51 /* DTNibHookAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNibHookAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* DTNibHook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DTNibHook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		24310345114A453300DC34DA /* DTTestNibHookTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTestNibHookTableViewController.h; sourceTree = "<group>"; };
-		24310346114A453300DC34DA /* DTTestNibHookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTestNibHookTableViewController.m; sourceTree = "<group>"; };
+		24310345114A453300DC34DA /* DTTestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTestTableViewController.h; sourceTree = "<group>"; };
+		24310346114A453300DC34DA /* DTTestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTestTableViewController.m; sourceTree = "<group>"; };
 		2431034B114A462500DC34DA /* DTTestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DTTestTableViewCell.xib; sourceTree = "<group>"; };
 		24310350114A464D00DC34DA /* DTTestTableViewCellNibHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTestTableViewCellNibHook.h; sourceTree = "<group>"; };
 		24310351114A464D00DC34DA /* DTTestTableViewCellNibHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTestTableViewCellNibHook.m; sourceTree = "<group>"; };
@@ -66,8 +66,8 @@
 				249022251149C067006EF03F /* DTTestNibHook.h */,
 				249022261149C067006EF03F /* DTTestNibHook.m */,
 				249022271149C067006EF03F /* DTTestNibHook.xib */,
-				24310345114A453300DC34DA /* DTTestNibHookTableViewController.h */,
-				24310346114A453300DC34DA /* DTTestNibHookTableViewController.m */,
+				24310345114A453300DC34DA /* DTTestTableViewController.h */,
+				24310346114A453300DC34DA /* DTTestTableViewController.m */,
 				2431034B114A462500DC34DA /* DTTestTableViewCell.xib */,
 				24310350114A464D00DC34DA /* DTTestTableViewCellNibHook.h */,
 				24310351114A464D00DC34DA /* DTTestTableViewCellNibHook.m */,
@@ -192,7 +192,7 @@
 				1D3623260D0F684500981E51 /* DTNibHookAppDelegate.m in Sources */,
 				249022241149C04F006EF03F /* DTNibHook.m in Sources */,
 				249022281149C067006EF03F /* DTTestNibHook.m in Sources */,
-				24310347114A453300DC34DA /* DTTestNibHookTableViewController.m in Sources */,
+				24310347114A453300DC34DA /* DTTestTableViewController.m in Sources */,
 				24310352114A464D00DC34DA /* DTTestTableViewCellNibHook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

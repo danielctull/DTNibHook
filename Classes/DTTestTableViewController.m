@@ -1,17 +1,17 @@
 //
-//  DTTestNibHookTableViewController.m
+//  DTTestTableViewController.m
 //  DTNibHook
 //
 //  Created by Daniel Tull on 12.03.2010.
 //  Copyright 2010 Daniel Tull. All rights reserved.
 //
 
-#import "DTTestNibHookTableViewController.h"
+#import "DTTestTableViewController.h"
 #import "DTTestTableViewCellNibHook.h"
 
-NSString *const DTTestNibHookTableViewControllerCellReuseIdentifier = @"Cell";
+NSString *const DTTestTableViewControllerCellReuseIdentifier = @"Cell";
 
-@implementation DTTestNibHookTableViewController
+@implementation DTTestTableViewController
 
 #pragma mark -
 #pragma mark UITableViewDataSource methods
@@ -29,7 +29,7 @@ NSString *const DTTestNibHookTableViewControllerCellReuseIdentifier = @"Cell";
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [[tableView dequeueReusableCellWithIdentifier:DTTestNibHookTableViewControllerCellReuseIdentifier] retain];
+    UITableViewCell *cell = [[tableView dequeueReusableCellWithIdentifier:DTTestTableViewControllerCellReuseIdentifier] retain];
 	DTTestTableViewCellNibHook *nibHook;
 	
     if (cell) {
