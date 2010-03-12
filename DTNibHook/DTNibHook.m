@@ -16,7 +16,8 @@
 - (void)hookPropertiesToIBTags;
 @end
 
-NSInteger const DTNibHookTagStartNumber = 1911;
+NSInteger const DTNibHookMainViewTag = 1911;
+NSInteger const DTNibHookTagStartNumber = 1912;
 NSInteger const DTNibHookFailNumber = -1911;
 
 @implementation DTNibHook
@@ -80,9 +81,14 @@ NSInteger const DTNibHookFailNumber = -1911;
 	
 	[tempList release];
 	
+	self.view.tag = DTNibHookMainViewTag;
+	
 }
 
 - (void)setTagsForProperties {
+	
+	if (self.view.tag != DTNibHookMainViewTag)
+		return;
 	
 	for (NSString *name in propertyList) {
 		
@@ -127,6 +133,9 @@ NSInteger const DTNibHookFailNumber = -1911;
 }
 
 - (void)logProperties {
+	
+	NSLog(@"%@: main view(%i) %@", self, self.view.tag, self.view);
+	
 	for (NSString *name in propertyList) {
 		
 		const char *cString = [name cStringUsingEncoding:[NSString defaultCStringEncoding]];
