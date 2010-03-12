@@ -12,6 +12,6 @@
 	UILabel *label;
 	UIActivityIndicatorView *indicator;
 }
-@property (nonatomic, retain) IBOutlet UILabel *label;
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *indicator;
+@property (nonatomic, assign) IBOutlet UILabel *label;
+@property (nonatomic, assign) IBOutlet UIActivityIndicatorView *indicator;
 @end
