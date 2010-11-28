@@ -53,12 +53,19 @@ NSInteger const DTNibHookFailNumber = -1911;
 
 @synthesize view;
 
++ (id)nibHookWithNibName:(NSString *)nibName {
+	return [self nibHookWithNibName:nibName bundle:nil];
+}
+
++ (id)nibHookWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle {
+	return [[[self alloc] initWithNibName:nibName bundle:bundle] autorelease];
+}
+
 - (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle {
 	
 	if (!(self = [super init])) return nil;
 	
-	if (!bundle)
-		bundle = [NSBundle mainBundle];
+	if (!bundle) bundle = [NSBundle mainBundle];
 	
 	[bundle loadNibNamed:nibName owner:self options:nil];
 	
@@ -66,6 +73,10 @@ NSInteger const DTNibHookFailNumber = -1911;
 	[self setTagsForProperties];
 	
 	return self;
+}
+
++ (id)nibHookWithView:(UIView *)aView {
+	return [[[self alloc] initWithView:aView] autorelease];
 }
 
 - (id)initWithView:(UIView *)aView {
