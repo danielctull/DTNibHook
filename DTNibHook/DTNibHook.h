@@ -46,6 +46,10 @@ extern NSInteger const DTNibHookFailNumber;
 
 @property (nonatomic, retain) IBOutlet UIView *view;
 
++ (id)nibHookWithNibName:(NSString *)nibName;
++ (id)nibHookWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle;
++ (id)nibHookWithView:(UIView *)aView;
+
 - (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle;
 - (id)initWithView:(UIView *)aView;
 
