@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>DTNibHook Class Reference</title>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<meta name="generator" content="appledoc" />
+	</head>
+	<body>
+		<article>
+			<div class="main-navigation navigation-top">
+				<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+			</div>
+			<div id="header">
+				<div class="section-header">
+					<h1 class="title title-header">DTNibHook Class Reference</h1>
+				</div>		
+			</div>
+			<div id="container">	
+				
+				<div class="section section-specification"><table cellspacing="0"><tbody>
+					<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">DTNibHook.h</td>
+</tr>
+					</tbody></table></div>
+				
+				
+				
+				<div class="section section-overview">
+					<h2 class="subtitle subtitle-overview">Overview</h2>
+					
+<p> The idea behind <a href="DTNibHook.html">DTNibHook</a> is to be able to create a custom <a href="#//api/name/view">view</a> in a nib and being able to change certain views in code later on when presented with just that view. A good example of when we’d like to do this is with UITableViewCells, we hand the cell over to the table <a href="#//api/name/view">view</a> and when we want to reuse it, all we have is the cell itself. </p>
+
+<p> You should to subclass this class and add properties for the subviews you wish to access later on. Your subclass then becomes the File Owner in the nib file for your view/table cell, where you can attach the outlet properties to the subviews and the <a href="#//api/name/view">view</a> property to your view/table cell. </p>
+
+<p> The following example uses a cell from a nib named DTTestCell with a sole property label. With the new runtime, our nib hook subclass looks like this: <pre> @interface DTTestNibHook : DTNibHook {}
+@property (nonatomic, retain) IBOutlet UILabel *label;
+@end </pre> <pre> @implementation DTTestNibHook
+@synthesize label;
+@end </pre></p>
+
+<p> Upon loading a nib file, a nib hook dynamically sets the tag property for each of the connected subviews, using a number based on the property’s alphabetised order. This enables another instance to bind itself to the main <a href="#//api/name/view">view</a> and set up the properties later on using the same method of ordering the property names. In either case, you can access the properties of the nib hook to manipulate the subviews. <pre> - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)ip { </pre> <pre> 	UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:@&quot;TestCell&quot;];
+	DTTestNibHook *nibHook; </pre> <pre> 	if (cell) {
+		nibHook = [[DTTestNibHook alloc] initWithView:cell];
+	} else {
+		nibHook = [[DTTestNibHook alloc] initWithNibName:@&quot;DTTestCell&quot; bundle:nil];
+		cell = [[(UITableViewCell *)nibHook.view retain] autorelease];
+	} </pre> <pre> 	nibHook.label.text = [NSString stringWithFormat:@&quot;Cell number %i&quot;, ip.row]; </pre> <pre> 	[nibHook release]; </pre> <pre> 	return cell;
+} </pre></p>
+
+				</div>
+				
+				
+				
+				
+				<div class="section section-tasks">
+					<h2 class="subtitle subtitle-tasks">Tasks</h2>
+					
+					
+
+					<ul class="task-list">
+						<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/nibHookWithNibName:">+ nibHookWithNibName:</a></code>
+		<span class="tooltip"> @name Hooking a NibHook to a nib </span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/nibHookWithView:">+ nibHookWithView:</a></code>
+		<span class="tooltip"> @name Hooking a NibHook to a <a href="#//api/name/view">view</a></span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/view"> view</a></code>
+		<span class="tooltip"> @name Getting the View </span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hookTagForPropertyName:">- hookTagForPropertyName:</a></code>
+		<span class="tooltip"> @name Internal? </span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/logProperties">- logProperties</a></code>
+		<span class="tooltip"> @name For Testing </span>
+	</span>
+	
+</li>
+					</ul>
+					
+				</div>
+				
+				
+				
+				
+				
+				<div class="section section-methods">
+					<h2 class="subtitle subtitle-methods">Class Methods</h2>
+					
+					<div class="section-method">
+	<a name="//api/name/nibHookWithNibName:" title="nibHookWithNibName:"></a>
+	<h3 class="subsubtitle method-title">nibHookWithNibName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p> @name Hooking a NibHook to a nib </p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (id)nibHookWithNibName:(NSString *)<em>nibName</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTNibHook.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/nibHookWithView:" title="nibHookWithView:"></a>
+	<h3 class="subsubtitle method-title">nibHookWithView:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p> @name Hooking a NibHook to a <a href="#//api/name/view">view</a></p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (id)nibHookWithView:(UIView *)<em>aView</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTNibHook.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+				</div>
+				
+				
+				
+				<div class="section section-methods">
+					<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+					
+					<div class="section-method">
+	<a name="//api/name/hookTagForPropertyName:" title="hookTagForPropertyName:"></a>
+	<h3 class="subsubtitle method-title">hookTagForPropertyName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p> @name Internal? </p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSInteger)hookTagForPropertyName:(NSString *)<em>propertyName</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTNibHook.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/logProperties" title="logProperties"></a>
+	<h3 class="subsubtitle method-title">logProperties</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p> @name For Testing </p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)logProperties</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTNibHook.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+				</div>
+				
+				
+				
+				<div class="section section-methods">
+					<h2 class="subtitle subtitle-methods">Properties</h2>
+					
+					<div class="section-method">
+	<a name="//api/name/view" title="view"></a>
+	<h3 class="subsubtitle method-title">view</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p> @name Getting the View </p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) IBOutlet UIView *view</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTNibHook.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+				</div>
+				
+				
+			</div>
+			<div class="main-navigation navigation-bottom">
+				<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+			</div>
+			<div id="footer">
+				<hr />
+				<div class="footer-copyright">
+					<p><span class="copyright">&copy; 2011 Daniel Tull. All rights reserved. (Last updated: 2011-01-08)</span><br />
+					<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc</a>.</span></p>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>
