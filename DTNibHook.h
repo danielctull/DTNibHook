@@ -72,16 +72,14 @@ extern NSInteger const DTNibHookFailNumber;
 		DTTestNibHook *nibHook;
 		
 		if (cell) {
-			nibHook = [[DTTestNibHook alloc] initWithView:cell];
+			nibHook = [DTTestNibHook nibHookWithView:cell];
 		} else {
-			nibHook = [[DTTestNibHook alloc] initWithNibName:@"DTTestCell" bundle:nil];
-			cell = [[(UITableViewCell *)nibHook.view retain] autorelease];
+			nibHook = [DTTestNibHook nibHookWithNibName:@"DTTestCell"];
+			cell = (UITableViewCell *)nibHook.view;
 		}
 		
 		nibHook.label.text = [NSString stringWithFormat:@"Cell number %i", ip.row];
-		
-		[nibHook release];
-		
+				
 		return cell;
 	}
  
