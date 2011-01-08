@@ -75,25 +75,55 @@
 				<div class="section section-tasks">
 					<h2 class="subtitle subtitle-tasks">Tasks</h2>
 					
-					
+					<h3 class="subsubtitle task-title">Hooking a NibHook to a nib</h3>
 
 					<ul class="task-list">
 						<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/nibHookWithNibName:">+ nibHookWithNibName:</a></code>
-		<span class="tooltip"> @name Hooking a NibHook to a nib </span>
+		<span class="tooltip"> Get a nib hook attached to a nib with the given nib name in the main bundle. </span>
 	</span>
 	
 </li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/nibHookWithNibName:bundle:">+ nibHookWithNibName:bundle:</a></code>
+		<span class="tooltip"> Get a nib hook attached to a nib with the given nib name in the given bundle. </span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithNibName:bundle:">- initWithNibName:bundle:</a></code>
+		<span class="tooltip"> Initialise a nib hook attached to a nib with the given nib name in the given bundle. </span>
+	</span>
+	
+</li>
+					</ul>
+					
+					<h3 class="subsubtitle task-title">Hooking a NibHook to a view</h3>
+
+					<ul class="task-list">
+						<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/nibHookWithView:">+ nibHookWithView:</a></code>
-		<span class="tooltip"> @name Hooking a NibHook to a <a href="#//api/name/view">view</a></span>
+		<span class="tooltip"> Get a nib hook attached to the given view. </span>
 	</span>
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/initWithView:">- initWithView:</a></code>
+		<span class="tooltip"> Initialise a nib hook attached to the given view. </span>
+	</span>
+	
+</li>
+					</ul>
+					
+					<h3 class="subsubtitle task-title">Getting the View</h3>
+
+					<ul class="task-list">
+						<li>
+	<span class="tooltip">
 		<code><a href="#//api/name/view"> view</a></code>
-		<span class="tooltip"> @name Getting the View </span>
+		<span class="tooltip"> The <a href="#//api/name/view">view</a> that the nib hook is attached to. </span>
 	</span>
 	
 </li><li>
@@ -127,14 +157,81 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p> @name Hooking a NibHook to a nib </p>
+		<p> Get a nib hook attached to a nib with the given nib name in the main bundle. </p>
 	</div>		
 	
 	
 	<div class="method-subsection method-declaration"><code>+ (id)nibHookWithNibName:(NSString *)<em>nibName</em></code></div>
 	
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>nibName</em></dt>
+			<dd> The name of the nib file to attach to. </dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p> A nib hook created from the nib. </p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTNibHook.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/nibHookWithNibName:bundle:" title="nibHookWithNibName:bundle:"></a>
+	<h3 class="subsubtitle method-title">nibHookWithNibName:bundle:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p> Get a nib hook attached to a nib with the given nib name in the given bundle. </p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (id)nibHookWithNibName:(NSString *)<em>nibName</em> bundle:(NSBundle *)<em>bundle</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>nibName</em></dt>
+			<dd> The name of the nib file to attach to. </dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bundle</em></dt>
+			<dd> The bundle where the nib can be found. </dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p> A nib hook created from the nib. </p>
+	</div>
 	
 	
 	
@@ -159,14 +256,29 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p> @name Hooking a NibHook to a <a href="#//api/name/view">view</a></p>
+		<p> Get a nib hook attached to the given view. </p>
 	</div>		
 	
 	
 	<div class="method-subsection method-declaration"><code>+ (id)nibHookWithView:(UIView *)<em>aView</em></code></div>
 	
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>view</em></dt>
+			<dd> The <a href="#//api/name/view">view</a> to attach to. </dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p> A nib hook attached to the given view. </p>
+	</div>
 	
 	
 	
@@ -206,6 +318,105 @@
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTNibHook.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/initWithNibName:bundle:" title="initWithNibName:bundle:"></a>
+	<h3 class="subsubtitle method-title">initWithNibName:bundle:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p> Initialise a nib hook attached to a nib with the given nib name in the given bundle. </p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)initWithNibName:(NSString *)<em>nibName</em> bundle:(NSBundle *)<em>bundle</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>nibName</em></dt>
+			<dd> The name of the nib file to attach to. </dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bundle</em></dt>
+			<dd> The bundle where the nib can be found. </dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p> A nib hook created from the nib. </p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTNibHook.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/initWithView:" title="initWithView:"></a>
+	<h3 class="subsubtitle method-title">initWithView:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p> Initialise a nib hook attached to the given view. </p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)initWithView:(UIView *)<em>aView</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>view</em></dt>
+			<dd> The <a href="#//api/name/view">view</a> to attach to. </dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p> A nib hook attached to the given view. </p>
+	</div>
 	
 	
 	
@@ -269,7 +480,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p> @name Getting the View </p>
+		<p> The <a href="#//api/name/view">view</a> that the nib hook is attached to. </p>
 	</div>		
 	
 	
