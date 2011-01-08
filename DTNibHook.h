@@ -92,15 +92,58 @@ extern NSInteger const DTNibHookFailNumber;
 }
 
 /// @name Hooking a NibHook to a nib
+
+/** Get a nib hook attached to a nib with the given nib name in the main bundle.
+ 
+ @param nibName The name of the nib file to attach to.
+ 
+ @return A nib hook created from the nib.
+ */
 + (id)nibHookWithNibName:(NSString *)nibName;
+
+
+
+/** Get a nib hook attached to a nib with the given nib name in the given bundle.
+ 
+ @param nibName The name of the nib file to attach to.
+ @param bundle The bundle where the nib can be found.
+ 
+ @return A nib hook created from the nib.
+ */
 + (id)nibHookWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle;
+
+/** Initialise a nib hook attached to a nib with the given nib name in the given bundle.
+ 
+ @param nibName The name of the nib file to attach to.
+ @param bundle The bundle where the nib can be found.
+ 
+ @return A nib hook created from the nib.
+ */
 - (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle;
 
 /// @name Hooking a NibHook to a view
+
+/** Get a nib hook attached to the given view.
+ 
+ @param view The view to attach to.
+ 
+ @return A nib hook attached to the given view.
+ */
 + (id)nibHookWithView:(UIView *)aView;
+
+
+
+/** Initialise a nib hook attached to the given view.
+ 
+ @param view The view to attach to.
+ 
+ @return A nib hook attached to the given view.
+ */
 - (id)initWithView:(UIView *)aView;
 
 /// @name Getting the View
+
+/** The view that the nib hook is attached to. */
 @property (nonatomic, retain) IBOutlet UIView *view;
 
 /// @name Internal?
