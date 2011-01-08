@@ -54,16 +54,14 @@
 	DTTestNibHook *nibHook;
 	
 	if (cell) {
-		nibHook = [[DTTestNibHook alloc] initWithView:cell];
+		nibHook = [DTTestNibHook nibHookWithView:cell];
 	} else {
-		nibHook = [[DTTestNibHook alloc] initWithNibName:@&quot;DTTestCell&quot; bundle:nil];
-		cell = [[(UITableViewCell *)nibHook.view retain] autorelease];
+		nibHook = [DTTestNibHook nibHookWithNibName:@&quot;DTTestCell&quot;];
+		cell = (UITableViewCell *)nibHook.view;
 	}
 	
 	nibHook.label.text = [NSString stringWithFormat:@&quot;Cell number %i&quot;, ip.row];
-	
-	[nibHook release];
-	
+			
 	return cell;
 } </pre></p>
 
