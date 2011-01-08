@@ -55,7 +55,7 @@ extern NSInteger const DTNibHookFailNumber;
 	@interface DTTestNibHook : DTNibHook {}
 	@property (nonatomic, retain) IBOutlet UILabel *label;
 	@end
- 
+	
 	@implementation DTTestNibHook
 	@synthesize label;
 	@end
@@ -67,21 +67,21 @@ extern NSInteger const DTNibHookFailNumber;
  either case, you can access the properties of the nib hook to manipulate the subviews.
  
 	- (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)ip {
- 
+		
 		UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:@"TestCell"];
 		DTTestNibHook *nibHook;
- 
+		
 		if (cell) {
 			nibHook = [[DTTestNibHook alloc] initWithView:cell];
 		} else {
 			nibHook = [[DTTestNibHook alloc] initWithNibName:@"DTTestCell" bundle:nil];
 			cell = [[(UITableViewCell *)nibHook.view retain] autorelease];
 		}
- 
+		
 		nibHook.label.text = [NSString stringWithFormat:@"Cell number %i", ip.row];
- 
+		
 		[nibHook release];
- 
+		
 		return cell;
 	}
  
