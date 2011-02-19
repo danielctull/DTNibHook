@@ -173,8 +173,8 @@ NSInteger const DTNibHookFailNumber = -1911;
 	
 	if (![propertyList containsObject:propertyName]) return DTNibHookFailNumber;
 	
-	NSInteger index = [propertyList indexOfObject:propertyName];
-	return index + DTNibHookTagStartNumber;
+	NSInteger theIndex = [propertyList indexOfObject:propertyName];
+	return theIndex + DTNibHookTagStartNumber;
 }
 
 - (void)logProperties {
