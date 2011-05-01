@@ -53,6 +53,10 @@ NSInteger const DTNibHookFailNumber = -1911;
 
 @synthesize view;
 
+- (id)init {
+	return [self initWithNibName:NSStringFromClass([self class]) bundle:nil];	
+}
+
 + (id)nibHookWithNibName:(NSString *)nibName {
 	return [self nibHookWithNibName:nibName bundle:nil];
 }
