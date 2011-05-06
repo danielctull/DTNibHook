@@ -96,7 +96,8 @@ NSInteger const DTNibHookFailNumber = -1911;
 }
 
 - (void)dealloc {
-	[view release];
+	[propertyList release], propertyList = nil;
+	[view release], view = nil;
 	[super dealloc];
 }
 
@@ -124,9 +125,9 @@ NSInteger const DTNibHookFailNumber = -1911;
 	
 	free(properties);
 	
-	[propertyList release];
-	propertyList = nil;
+	NSArray *old = propertyList;
 	propertyList = [[NSArray alloc] initWithArray:tempList];
+	[old release], old = nil;
 	
 	[tempList release];
 	
