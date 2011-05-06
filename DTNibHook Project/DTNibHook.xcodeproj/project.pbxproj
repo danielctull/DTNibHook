@@ -14,9 +14,9 @@
 		24310347114A453300DC34DA /* DTTestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24310346114A453300DC34DA /* DTTestTableViewController.m */; };
 		2431034C114A462500DC34DA /* DTTestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2431034B114A462500DC34DA /* DTTestTableViewCell.xib */; };
 		24310352114A464D00DC34DA /* DTTestTableViewCellNibHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 24310351114A464D00DC34DA /* DTTestTableViewCellNibHook.m */; };
-		2463C60A12AED724001AFF48 /* DTNibHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 2463C5AF12AED724001AFF48 /* DTNibHook.m */; };
 		249022281149C067006EF03F /* DTTestNibHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 249022261149C067006EF03F /* DTTestNibHook.m */; };
 		249022291149C067006EF03F /* DTTestNibHook.xib in Resources */ = {isa = PBXBuildFile; fileRef = 249022271149C067006EF03F /* DTTestNibHook.xib */; };
+		24FE94911374337C003224BE /* DTNibHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FE94901374337C003224BE /* DTNibHook.m */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 /* End PBXBuildFile section */
@@ -32,15 +32,14 @@
 		2431034B114A462500DC34DA /* DTTestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DTTestTableViewCell.xib; sourceTree = "<group>"; };
 		24310350114A464D00DC34DA /* DTTestTableViewCellNibHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTestTableViewCellNibHook.h; sourceTree = "<group>"; };
 		24310351114A464D00DC34DA /* DTTestTableViewCellNibHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTestTableViewCellNibHook.m; sourceTree = "<group>"; };
-		2463C5AE12AED724001AFF48 /* DTNibHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNibHook.h; sourceTree = "<group>"; };
-		2463C5AF12AED724001AFF48 /* DTNibHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNibHook.m; sourceTree = "<group>"; };
 		249022251149C067006EF03F /* DTTestNibHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTestNibHook.h; sourceTree = "<group>"; };
 		249022261149C067006EF03F /* DTTestNibHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTestNibHook.m; sourceTree = "<group>"; };
 		249022271149C067006EF03F /* DTTestNibHook.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DTTestNibHook.xib; sourceTree = "<group>"; };
+		24FE948F1374337C003224BE /* DTNibHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTNibHook.h; path = ../DTNibHook.h; sourceTree = "<group>"; };
+		24FE94901374337C003224BE /* DTNibHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTNibHook.m; path = ../DTNibHook.m; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32CA4F630368D1EE00C91783 /* DTNibHook_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNibHook_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* DTNibHook-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DTNibHook-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,20 +82,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2463C50A12AED723001AFF48 /* DTNibHook */ = {
+		24FE948E1374336D003224BE /* DTNibHook */ = {
 			isa = PBXGroup;
 			children = (
-				2463C5AE12AED724001AFF48 /* DTNibHook.h */,
-				2463C5AF12AED724001AFF48 /* DTNibHook.m */,
+				24FE948F1374337C003224BE /* DTNibHook.h */,
+				24FE94901374337C003224BE /* DTNibHook.m */,
 			);
 			name = DTNibHook;
-			path = /Users/danielctull/Dropbox/Programs/Cocoa/Frameworks/DTNibHook;
-			sourceTree = "<absolute>";
+			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				2463C50A12AED723001AFF48 /* DTNibHook */,
+				24FE948E1374336D003224BE /* DTNibHook */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -109,7 +107,6 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32CA4F630368D1EE00C91783 /* DTNibHook_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -201,7 +198,7 @@
 				249022281149C067006EF03F /* DTTestNibHook.m in Sources */,
 				24310347114A453300DC34DA /* DTTestTableViewController.m in Sources */,
 				24310352114A464D00DC34DA /* DTTestTableViewCellNibHook.m in Sources */,
-				2463C60A12AED724001AFF48 /* DTNibHook.m in Sources */,
+				24FE94911374337C003224BE /* DTNibHook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +213,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = DTNibHook_Prefix.pch;
+				GCC_PREFIX_HEADER = "";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "DTNibHook-Info.plist";
 				PRODUCT_NAME = DTNibHook;
@@ -230,7 +227,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = DTNibHook_Prefix.pch;
+				GCC_PREFIX_HEADER = "";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "DTNibHook-Info.plist";
 				PRODUCT_NAME = DTNibHook;
